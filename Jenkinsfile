@@ -45,7 +45,7 @@ pipeline{
                 {
               steps{
                   script{
-		 sh 'cp -r ../test/target .'
+		 sh 'cp -r ../test@4/target .'
                    sh 'docker build . -t mani854/project-repo:$Docker_tag'
 		   withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
 				    
