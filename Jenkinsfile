@@ -45,12 +45,12 @@ pipeline{
                 {
               steps{
                   script{
-		 sh 'cp -r ../devops-training@2/target .'
-                   sh 'docker build . -t deekshithsn/devops-training:$Docker_tag'
+		 sh 'cp -r ../test/target .'
+                   sh 'docker build . -t mani854/project-repo:$Docker_tag'
 		   withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
 				    
-				  sh 'docker login -u deekshithsn -p $docker_password'
-				  sh 'docker push deekshithsn/devops-training:$Docker_tag'
+				  sh 'docker login -u mani854 -p $docker_password'
+				  sh 'docker push mani854/project-repo:$Docker_tag'
 			}
                        }
                     }
